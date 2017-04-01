@@ -1,27 +1,32 @@
 {
-  "name": "spring-kotlin-react-demo",
+  "name": "springboot-kotlin-react-gradle",
   "version": "1.0.0",
-  "description": "Spring Kotlin React Demo",
+  "description": "SpringBoot Kotlin React Gradle Demo",
   "main": "src/main/js/app.js",
-  "author": "Benjamin Winterberg",
   "license": "MIT",
-  "homepage": "http://winterbe.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/winterbe/spring-kotlin-react-demo"
+    "url": ""
   },
   "scripts": {
-    "build": "gradle -q clean build && npm install && webpack",
-    "serve": "gradle -q clean bootRun",
-    "all": "npm install && webpack && gradle -q clean bootRun"
+    "build": "gradle -q cleanAll && npm install && webpack && gradle -q build",
+    "run": "gradle -q cleanAll && npm install && webpack && gradle -q build bootRun"
   },
   "dependencies": {
-    "babel-core": "^5.8.22",
-    "babel-loader": "^5.3.2",
-    "jquery": "^2.1.4",
-    "react": "^0.13.3",
-    "webpack": "^1.11.0",
-    "eslint": "^1.6.0",
-    "eslint-loader": "^1.0.0"
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "webpack": "^2.3.2",
+    "jquery": "^3.2.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "file-loader": "^0.11.1",
+    "material-ui": "^0.17.1",
+    "react-tap-event-plugin": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0"
   }
 }

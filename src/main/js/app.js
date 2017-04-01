@@ -1,29 +1,26 @@
-const React = require("react");
-const $ = require("jquery");
+import ReactDom from 'react-dom';
+import React from 'react';
+import {deepOrange500} from 'material-ui/styles/colors';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-/* eslint no-unused-vars: 0 */
-const App = React.createClass({
-    render() {
-        return (
-            <h1>Hello {this.state.name}</h1>
-        );
+import MainPage from './MainPage';
+
+const muiTheme = getMuiTheme({
+    palette: {
+        accent1Color: deepOrange500,
     },
-
-    getInitialState() {
-        return {name: "World"};
-    },
-
-    componentDidMount() {
-        $.ajax({
-            url: 'hello',
-            data: {name: 'React'}
-        }).done(json => {
-            this.setState({name: json.name});
-        });
-    }
 });
 
-React.render(
-    <App/>,
+function App() {
+    return (
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <MainPage />
+        </MuiThemeProvider>
+    );
+}
+
+ReactDom.render(
+    <App />,
     document.getElementById('app')
 );
